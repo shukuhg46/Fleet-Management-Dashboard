@@ -1,0 +1,7 @@
+
+.vehicle-list {
+  @apply list-disc pl-5;
+}
+.spinner {
+  @apply text-center py-5;
+}

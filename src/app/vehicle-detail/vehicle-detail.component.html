@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4">Vehicle Information</h2>
+        <table class="min-w-full bg-white border border-gray-200">
+            <tbody>
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-200 text-left bg-gray-100">Vehicle ID</th>
+                    <td class="py-2 px-4 border-b border-gray-200">{{ vehicle.id }}</td>
+                </tr>
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-200 text-left bg-gray-100">Latitude</th>
+                    <td class="py-2 px-4 border-b border-gray-200">{{ vehicle.Latitude }}</td>
+                </tr>
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-200 text-left bg-gray-100">Longitude</th>
+                    <td class="py-2 px-4 border-b border-gray-200">{{ vehicle.Longitude }}</td>
+                </tr>
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-200 text-left bg-gray-100">Timestamp</th>
+                    <td class="py-2 px-4 border-b border-gray-200">{{ vehicle.Timestamp }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="text-xl font-semibold mt-6 mb-2">Vehicle Picture</h3>
+        <img src="{{vehicle.pictureUrl}}" alt="Vehicle Picture" class="w-full h-auto rounded-lg shadow-md">
+
+
+        <div *ngIf="vehicle" class="mt-6 w-full">
+          <h3 class="text-xl font-semibold mt-6 mb-2">Vehicle Live Location (You can zoom in and out)</h3>
+            <div id="map" style="width: 615px; height: 300px;"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+.vehicle-detail {
+  @apply p-5 border rounded shadow;
+}
